@@ -8,3 +8,5 @@ uses Adafruit Boards:
 - RFM69 Feather
 - Display
 
+functional examples  in `/examples` are copied from the original adafruit learn tutorials and
+slightly tweaked for own hardware setup.

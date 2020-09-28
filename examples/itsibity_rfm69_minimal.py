@@ -33,7 +33,7 @@ rfm69.bitrate = 250000 / 2
 print("itsybitsy_rfm69_minimal.py")
 
 while True:
-    packet = rfm69.receive()
+    packet = rfm69.receive(timeout=0.1)
     if packet is None:
         LED.value = False
     else:

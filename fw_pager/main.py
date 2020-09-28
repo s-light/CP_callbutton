@@ -42,6 +42,8 @@ rfm69.encryption_key = None
 # Can be set to a value from -2 to 20 for high power devices
 rfm69.tx_power = 20
 
+# slower bitrate for reliable transmitting
+rfm69.bitrate = 250000 / 2
 
 ##########################################
 # display
@@ -117,11 +119,22 @@ def packet_handling(packet_text):
             packet_text,
         ),
     )
+    # play_tone(300)
     if "start_time_reset" in packet_text:
         start_time = time.monotonic()
         play_tone(1000)
+        time.sleep(0.1)
         play_tone(1000)
-    play_tone(300)
+
+    if "p:" in packet_text:
+
+
+    if "green" in packet_text:
+        play_tone(300)
+        time.sleep(0.1)
+        play_tone(300)
+        time.sleep(0.1)
+        play_tone(300)
 
 
 def radio_handling():

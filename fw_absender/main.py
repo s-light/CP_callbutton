@@ -46,6 +46,9 @@ rfm69.encryption_key = None
 # Can be set to a value from -2 to 20 for high power devices
 rfm69.tx_power = 20
 
+# slower bitrate for reliable transmitting
+rfm69.bitrate = 250000 / 2
+
 
 ##########################################
 # display
@@ -121,7 +124,7 @@ def send_packet(text):
     run_time = time.monotonic() - start_time
     rfm69.send(bytes(text, "utf-8"))
     print(
-        "{:+.1f}: "
+        "{: 3.1f}: "
         "{} "
         "".format(
             run_time,
@@ -149,6 +152,7 @@ def radio_packet_handling(packet_text):
     if "start_time_reset" in packet_text:
         start_time = time.monotonic()
         play_tone(1000)
+        time.sleep(0.1)
         play_tone(1000)
     play_tone(500)
 

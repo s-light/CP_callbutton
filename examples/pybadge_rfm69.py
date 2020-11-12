@@ -77,7 +77,7 @@ def check_buttons():
     btn_select.update()
     if btn_select.fell:
         # Print out some chip state:
-        print("Temperature: {0}C".format(rfm69.temperature))
+        # print("Temperature: {0}C".format(rfm69.temperature))
         print("Frequency: {0}mhz".format(rfm69.frequency_mhz))
         print("Bit rate: {0}kbit/s".format(rfm69.bitrate / 1000))
         print("Frequency deviation: {0}hz".format(rfm69.frequency_deviation))

@@ -51,6 +51,8 @@ rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ)
 #     b"\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08"
 # )
 rfm69.encryption_key = None
+rfm69.tx_power = 20
+rfm69.bitrate = 250000 / 2
 
 
 print("rfm69_pybadge.py")

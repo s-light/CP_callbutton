@@ -94,14 +94,14 @@ def check_rfm69():
     else:
         # Received a packet!
         LED.value = True
-        # Print out the raw bytes of the packet:
-        # print("Received (raw bytes): {0}".format(packet))
-        # And decode to ASCII text and print it too.  Note that you always
-        # receive raw bytes and need to convert to a text format like ASCII
-        # if you intend to do string processing on your data.  Make sure the
-        # sending side is sending ASCII data before you try to decode!
-        packet_text = str(packet, "ascii")
-        print("Received (ASCII): {0}".format(packet_text))
+        # print
+        print(
+            "{:+.1f}dbm '{}'"
+            "".format(
+                rfm69.rssi,
+                str(packet, "utf-8"),
+            ),
+        )
 
 
 ##########################################

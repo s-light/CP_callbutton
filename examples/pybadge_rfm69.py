@@ -81,6 +81,7 @@ def check_buttons():
         print("Frequency: {0}mhz".format(rfm69.frequency_mhz))
         print("Bit rate: {0}kbit/s".format(rfm69.bitrate / 1000))
         print("Frequency deviation: {0}hz".format(rfm69.frequency_deviation))
+        print("last rssi: {:+.1f}dbm".format(rfm69.rssi))
 
 
 def check_rfm69():
